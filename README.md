@@ -97,7 +97,7 @@ Siga os passos abaixo para rodar o projeto em sua máquina.
 
 Abaixo, uma breve demonstração das principais funcionalidades do sistema, incluindo o agendamento pelo cliente e o gerenciamento pelo painel administrativo.
 
-![Demonstração do Sistema de Agendamento da Barbearia](assets/![gifBarbearia](https://github.com/user-attachments/assets/06eb39d7-bc74-4566-8d41-8ca540a9d20b)
+![Demonstração do Sistema de Agendamento da Barbearia](assets/gifBarbearia.gif)
 )
 
 ---
