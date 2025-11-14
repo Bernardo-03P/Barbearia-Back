@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa - Barbearia Corte Fino</title>
+    <link rel="stylesheet" href="admin.style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header>
+            <h1>Painel de Agendamentos</h1>
+            <p>Gerencie os horários da barbearia.</p>
+        </header>
+
+        <main>
+            <div id="admin-feedback"></div>
+            <table class="tabela-agendamentos">
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Serviço</th>
+                        <th>Horário</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-agendamentos-corpo">
+                    <!-- Linhas da tabela serão inseridas aqui pelo JavaScript -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

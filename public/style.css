@@ -1,0 +1,250 @@
+/* public/style.css - VERSÃO 2.0 COM LAYOUT AMPLO */
+
+/* 1. FONTES E VARIÁVEIS DE COR (PALETA) */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+:root {
+    --bg-color: #121212;
+    --primary-color: #1c1c1c;
+    --accent-color: #d4ac70;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #333333;
+    --danger-color: #dc3545;
+}
+
+/* 2. RESET E ESTILOS GLOBAIS */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.8;
+}
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* 3. SEÇÃO HERO */
+.hero {
+    height: 40vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1599351542612-a727271871a7?q=80&w=2070&auto=format&fit=crop') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+.hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+.hero p { font-size: 1.2rem; font-weight: 300; }
+
+/* 4. CONTAINER PRINCIPAL E LAYOUT */
+.container {
+    max-width: 1200px; /* MAIS LARGO */
+    margin: -80px auto 40px auto;
+    padding: 40px;
+    background: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    position: relative;
+    z-index: 10;
+}
+main section { margin-bottom: 3rem; }
+h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+
+/* NOVA DIVISÃO DE LAYOUT */
+.layout-divider {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.layout-column {
+    flex: 1;
+    min-width: 300px;
+}
+#servicos { width: 100%; } /* Garante que serviços ocupe a largura toda */
+
+
+/* 5. ESTILOS DE COMPONENTES (FORMULÁRIOS, BOTÕES, ETC) */
+.form-group { margin-bottom: 1.5rem; }
+label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; }
+
+input[type="text"], input[type="tel"], input[type="datetime-local"], select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(212, 172, 112, 0.2);
+}
+
+button {
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+button:hover { background-color: #e6bf8c; }
+button:disabled { background-color: #555; cursor: not-allowed; }
+
+/* 6. LISTAS E BUSCA */
+#lista-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+.servico-item {
+    background: var(--bg-color);
+    padding: 15px;
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+}
+.servico-item strong { color: var(--accent-color); float: right; }
+
+.busca-group { display: flex; gap: 10px; }
+.busca-group input { flex: 1; }
+.busca-group button { padding: 0 20px; font-size: 0.9rem; }
+
+#resultados-busca { margin-top: 20px; }
+.agendamento-encontrado {
+    background: var(--bg-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.agendamento-encontrado .info { font-size: 0.9rem; }
+.cancelar-btn-cliente {
+    background-color: var(--danger-color);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+/* 7. MENSAGENS DE FEEDBACK */
+#mensagem-feedback, #resultados-busca p { margin-top: 1.5rem; padding: 12px; border-radius: 4px; text-align: center; }
+.sucesso { background-color: rgba(40, 167, 69, 0.2); color: #28a745; }
+.erro { background-color: rgba(220, 53, 69, 0.2); color: var(--danger-color); }
+.error-message { color: var(--danger-color); font-size: 0.85rem; margin-top: 5px; min-height: 1.2em; }
+
+.flatpickr-calendar {
+    background: var(--primary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 320px;
+}
+
+/* Cabeçalho do calendário (mês e setas) */
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+    fill: var(--accent-color); /* Cor das setas */
+    transition: fill 0.2s;
+}
+
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+    fill: #fff;
+}
+
+/* Dias da semana (Seg, Ter, Qua...) */
+.flatpickr-weekday {
+    color: var(--text-muted);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+/* Estilo dos dias (números) */
+.flatpickr-day {
+    color: var(--text-color);
+    border: 1px solid transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.flatpickr-day:hover {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+/* Dia de hoje */
+.flatpickr-day.today {
+    border-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+/* Dia selecionado */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+    background: var(--accent-color);
+    color: var(--bg-color); /* Texto escuro para contraste com o fundo dourado */
+    border-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+/* Dias desabilitados (passado, domingos, horários ocupados) */
+.flatpickr-day.disabled {
+    color: #555; /* Cinza bem escuro para parecer "apagado" */
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+.flatpickr-day.disabled:hover {
+    background: none;
+}
+
+/* Seção de seleção de hora */
+.flatpickr-time {
+    border-top: 1px solid var(--border-color);
+}
+
+.flatpickr-time .numInput {
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.flatpickr-time .numInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Cor dos separadores e setas da hora */
+.flatpickr-time-separator,
+.flatpickr-am-pm {
+    color: var(--text-color);
+}
+.flatpickr-time .arrowUp:after {
+    border-bottom-color: var(--accent-color);
+}
+.flatpickr-time .arrowDown:after {
+    border-top-color: var(--accent-color);
+}

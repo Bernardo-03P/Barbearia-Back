@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Corte Novo - Agendamento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Barbearia Corte Novo</h1>
+            <p>Estilo e precisão em cada corte.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <main>
+            <!-- SEÇÃO DE SERVIÇOS (SUPERIOR) -->
+            <section id="servicos">
+                <h2>Nossos Serviços</h2>
+                <div id="lista-servicos"></div>
+            </section>
+
+            <!-- NOVA DIVISÃO DE LAYOUT (EMBAIXO) -->
+            <div class="layout-divider">
+                
+                <!-- COLUNA DA ESQUERDA: AGENDAMENTO -->
+                <section id="agendamento" class="layout-column">
+                    <h2>Agende seu Horário</h2>
+                    <form id="form-agendamento">
+                        <div class="form-group">
+                            <label for="nome">Seu Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+                            <div class="error-message" id="error-nome"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Seu Telefone (com DDD):</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                            <div class="error-message" id="error-telefone"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="servico">Escolha o Serviço:</label>
+                            <select id="servico" name="servico" required></select>
+                            <div class="error-message" id="error-servico"></div>
+                        </div>
+                       <div class="form-group">
+                            <label for="horario">Escolha a Data e Hora:</label>
+                            <!-- ATUALIZADO: type="text" e adicionado placeholder -->
+                            <input type="text" id="horario" name="horario" placeholder="Clique para selecionar a data..." required>
+                            <div class="error-message" id="error-horario"></div>
+                        </div>
+                        <button type="submit" id="btn-agendar">Agendar Agora</button>
+                    </form>
+                    <div id="mensagem-feedback"></div>
+                </section>
+
+                <!-- COLUNA DA DIREITA: BUSCA E CANCELAMENTO -->
+                <section id="meus-agendamentos" class="layout-column">
+                    <h2>Meus Agendamentos</h2>
+                    <form id="form-busca">
+                        <label for="busca-telefone">Digite seu telefone para ver ou cancelar</label>
+                        <div class="busca-group">
+                            <input type="tel" id="busca-telefone" placeholder="(XX) XXXXX-XXXX" required>
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <div id="resultados-busca">
+                        <!-- Resultados da busca aparecerão aqui -->
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
