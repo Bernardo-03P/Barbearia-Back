@@ -93,13 +93,6 @@ Siga os passos abaixo para rodar o projeto em sua máquina.
     *   **Página do Cliente:** Abra seu navegador e acesse `http://localhost:5000`.
     *   **Painel do Administrador:** Acesse `http://localhost:5000/admin.html`.
 
-🎥 Demonstração
-
-Abaixo, uma breve demonstração das principais funcionalidades do sistema, incluindo o agendamento pelo cliente e o gerenciamento pelo painel administrativo.
-
-![Demonstração do Sistema de Agendamento da Barbearia](assets/gifBarbearia.gif)
-)
-
 ---
 
 ## 👥 Integrantes do Grupo
